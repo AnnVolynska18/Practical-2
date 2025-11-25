@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+
+using namespace std;
+
+void task1() {
+    cout << "--- Завдання 1: Обчислення функції v ---\n";
+
+    // Дані за умовою
+    const double a = 2.0;
+    const double x = 0.5;
+    
+    // 1. Обчислення z
+    // z = |2 - x * cos(a^2)|
+    // cos працює з радіанами, тому a^2 передається напряму.
+    double z = abs(2.0 - x * cos(pow(a, 2.0))); 
+    
+    // 2. Обчислення v
+    // v = sin( (2z+1)^(1/3) ) - 2.34
+    double term_in_sin = pow(2.0 * z + 1.0, 1.0 / 3.0); // Кубічний корінь
+    double v = sin(term_in_sin) - 2.34;
+    
+    cout << "Вхідні дані: a = " << a << ", x = " << x << endl;
+    cout << "Проміжне значення z = " << z << endl;
+    cout << "Результат: v = " << v << endl;
+    cout << "------------------------------------------\n";
+}
