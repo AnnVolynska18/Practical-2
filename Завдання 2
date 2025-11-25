@@ -1,0 +1,35 @@
+void task2() {
+    cout << "--- Завдання 2: Обчислення функції h ---\n";
+
+    // Дані за умовою
+    const double x = 2.45;
+    // y = -0.423 * 10^-2 = -0.00423
+    const double y = -0.00423; 
+    // z = 1.232 * 10^3 = 1232.0
+    const double z = 1232.0; 
+
+    // 1. Обчислення чисельника (Num)
+    // Num = x^(2y) + e^(y-1)
+    double numerator = pow(x, 2.0 * y) + exp(y - 1.0);
+
+    // 2. Обчислення знаменника (Denom)
+    // Denom = 1 + x * y^2 - tg(z)
+    double denominator = 1.0 + x * pow(y, 2.0) - tan(z);
+
+    // Перевірка на ділення на нуль
+    if (denominator == 0.0) {
+        cout << "Помилка: Ділення на нуль (знаменник = 0).\n";
+        return;
+    }
+
+    // 3. Обчислення другого доданку (Term2)
+    // Term2 = 10 * x^(1/3) * ln(z)
+    double term2 = 10.0 * pow(x, 1.0 / 3.0) * log(z);
+
+    // 4. Обчислення h
+    double h = numerator / denominator + term2;
+    
+    cout << "Вхідні дані: x = " << x << ", y = " << y << ", z = " << z << endl;
+    cout << "Результат: h = " << h << endl;
+    cout << "------------------------------------------\n";
+}
