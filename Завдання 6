@@ -1,0 +1,35 @@
+// Функція, що обчислює відстань між (xa, ya) та (xb, yb)
+double calculateDistance(double xa, double ya, double xb, double yb) {
+    // d = sqrt( (xb - xa)^2 + (yb - ya)^2 )
+    return sqrt(pow(xb - xa, 2.0) + pow(yb - ya, 2.0));
+}
+
+void task6() {
+    cout << "--- Завдання 6: Довжини сторін трикутника ---\n";
+
+    // Координати вершин
+    double x1, y1, x2, y2, x3, y3;
+
+    cout << "Введіть координати вершини A (x1 y1): ";
+    cin >> x1 >> y1;
+    cout << "Введіть координати вершини B (x2 y2): ";
+    cin >> x2 >> y2;
+    cout << "Введіть координати вершини C (x3 y3): ";
+    cin >> x3 >> y3;
+
+    // Обчислення довжини кожної сторони
+    // Side AB: d(A, B)
+    double side_AB = calculateDistance(x1, y1, x2, y2);
+    
+    // Side BC: d(B, C)
+    double side_BC = calculateDistance(x2, y2, x3, y3);
+    
+    // Side AC: d(A, C)
+    double side_AC = calculateDistance(x1, y1, x3, y3);
+
+    cout << "\nДовжини сторін:\n";
+    cout << "Сторона AB: " << side_AB << endl;
+    cout << "Сторона BC: " << side_BC << endl;
+    cout << "Сторона AC: " << side_AC << endl;
+    cout << "------------------------------------------\n";
+}
